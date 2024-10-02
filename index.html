@@ -3,25 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Website</h1>
+        <h1>Welcome to Our Website</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+    
     <main>
-        <p>This is the main content of my website.</p>
+        <form action="/login" method="post">
+            <div class="container">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Submit</button>
+            </div>
+            
+            <script>
+                if(document.location.hash === '#unauthorized') {
+             document.write('<div class=“unauthorized”>Invalid Username or Password</div>');
+                } else if(document.location.hash === '#error') {
+             document.write('<div class=“error”>An error has occured</div>');
+                }
+              </script>
+             
+        </form>
     </main>
+
     <footer>
-        <p>&copy; 2024 My Website. All rights reserved.</p>
+        <p>&copy; 2024 Our Website. All rights reserved.</p>
     </footer>
 </body>
 </html>
